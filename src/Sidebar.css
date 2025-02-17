@@ -1,0 +1,100 @@
+/* SIDEBAR CONTAINER */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #5e1b89; /* Main purple color */
+    height: 100vh;
+    width: 250px; /* Expanded width */
+    transition: width 0.3s ease;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  /* When collapsed, reduce width */
+  .sidebar:not(.open) {
+    width: 70px;
+  }
+  
+  /* TOP SECTION: White background with logo */
+  .top-section {
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #5e1b89;
+  }
+  
+  /* Logo styling for expanded state */
+  .sidebar.open .logo img {
+    height: 40px;
+  }
+  
+  /* Logo styling for collapsed (mini) state */
+  .sidebar:not(.open) .logo img {
+    height: 50px;
+    width: auto;
+    top: 10px;
+    left: 50%;
+    transform: translateX(24%);
+  }
+  
+  /* SIDEBAR MENU */
+  .menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+  }
+  
+  .menuItem:hover {
+    background-color: #f4512c; /* Accent color */
+  }
+  
+  .icon {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  /* HIDE SIDEBAR BUTTON */
+  .hide-btn {
+    position: absolute;
+    top: 50%;
+    right: -20px; /* Adjust space for better visual balance */
+    background-color: #f4512c;
+    border: none;
+    border-radius: 15%; /* Make the button round */
+    width: -50px; /* Adjust size for better clicking area */
+    height: 40px; /* Keep circular shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Slight shadow */
+    color: #fff;
+  }
+  
+  .hide-btn:hover {
+    background-color: #d63b1a; /* Darker hover color */
+    transform: scale(1.1); /* Slight scaling effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  }
+  
+  /* Icon rotation when sidebar is open */
+  .sidebar.open .hide-btn .icon {
+    transform: rotate(180deg); /* Rotate icon when sidebar is open */
+    transition: transform 0.3s ease;
+  }
+  
